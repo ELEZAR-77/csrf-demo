@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h2>Профиль пользователя</h2>
+
+<p>Email: <b th:text="${email}"></b></p>
+
+<form method="post" action="/change-email">
+    <input type="email" name="email" required>
+
+    <!-- CSRF-токен -->
+    <input type="hidden"
+           th:name="${_csrf.parameterName}"
+           th:value="${_csrf.token}" />
+
+    <button type="submit">Сменить email</button>
+</form>
+
+</body>
+</html>
