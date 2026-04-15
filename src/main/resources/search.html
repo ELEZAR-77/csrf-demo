@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Search</title>
+</head>
+<body>
+
+<h2>Поиск пользователей</h2>
+
+<form method="get" action="/search">
+    <input type="text" name="username">
+    <button type="submit">Поиск</button>
+</form>
+
+<hr>
+
+<ul>
+    <li th:each="u : ${users}">
+        <span th:text="${u.username}"></span> -
+        <span th:text="${u.email}"></span>
+    </li>
+</ul>
+
+</body>
+</html>
